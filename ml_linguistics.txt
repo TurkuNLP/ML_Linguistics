@@ -1,0 +1,39 @@
+To log on:
+host name: vm0964.kaj.pouta.csc.fi
+
+usernames: nau1, nau2, nau3, nau4, nau5
+passwords: change.nau1, change.nau2, etc
+
+1. Useful basic commands:
+ls --> list all files in the directory
+nano x.txt --> open t.txt in the nano text editor
+cat x.txt --> print x.txt
+less x.txt --> browse x.txt (return to command line by pressing q)
+python program.py --> run program.py
+cat x.txt | python program.py --> first print x.txt and then feed it as input for program.py
+cd directory --> go the directory
+
+2. Getting the data
+type git clone https://github.com/TurkuNLP/ML_Linguistics.git to the command line
+type ls and enter --> you should see a directory
+type cd ML-Linguistics --> go to the directory
+type ls --> you should see the files
+
+3. Text classification 
+cat 0_ob.txt 1_df.txt 2_sr.txt 3_tb.txt | python svm.py | less --> print the files as input for svm.py, browse the results with less (back to command line with q)
+3. 1. Run the classifier with the two feature sets. How are the results? Which registers are the hardest, which the easiest to detect? Which feature set was the best?
+3. 2. Analyze the key features. Do they make sense? Are there some that  seem less informative? Why?
+3.3 Try to improve the results by 1) changing the vectorizer and / or 2) changing the c value and the penalty (l1/l2). *
+How do these affect the number of non-zero features? Do you manage to improve the classifier performance?
+3.4. Analyze the changes in key features when you change the vectorizer and / or c-value and / or the penalty. What are the best parameters to get the linguistically the best keywords? How does this affect the classifier performance?
+3.5. You can also analyze the misclassified texts to better understand the classifier performance. Uncomment (take the hashtags away from) the code in the end of the svm.py file for this!
+
+* L1 regularization “uses a penalty term which encourages the sum of the absolute values of the parameters to be small, […] L2 regularization encourages the sum of the squares of the parameters to be small” (Ng 2004). Consequently, L1 can cause many parameters to equal zero, which helps to perform feature selection. The c-value controls the amount of penalty used.
+For the formula of tf idf, see https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction
+
+4. Word2vec
+Let's try to see if we get different word vectors when syntactic information is included! As data, we have word vectors trained with 120,000 documents from CORE and GLobWe. Not giant, but let' see.
+4.1 First you need to uncompress the vector file with "zcat words.vectors.gz > words.vectors" NB: the file must have an .vectors ending!
+4.2 The words that have vector representations are listed in words_in_vec.txt. The file has some noise, too...
+4.3 You can try to look which words have nearby vectors with 
+echo "horse" | python3 print_nearest_doc.py words.vectors | less
