@@ -1,12 +1,6 @@
 To log on:
 host name: vm0964.kaj.pouta.csc.fi
 
-<<<<<<< HEAD
-=======
-usernames: nau1, nau2, nau3, nau4, nau5
-passwords: ask me
->>>>>>> cd48067feb0375c7a11bdbf7b1e8e370d70fff7d
-
 1. Useful basic commands:
 ls --> list all files in the directory
 nano x.txt --> open t.txt in the nano text editor
