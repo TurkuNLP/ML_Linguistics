@@ -50,7 +50,7 @@ def tokenizer(txt):
     return txt.split()
 
 #try to change these!!
-vectorizer=sklearn.feature_extraction.text.TfidfVectorizer(tokenizer=tokenizer)#, use_idf=True,max_df=0.9, min_df=0.01)
+vectorizer=sklearn.feature_extraction.text.TfidfVectorizer(tokenizer=tokenizer, use_idf=True)#,max_df=0.9, min_df=0.01)
 #vectorizer=sklearn.feature_extraction.text.CountVectorizer(tokenizer=tokenizer)
 
 iterator=data_iterator(feats_train)
@@ -61,7 +61,7 @@ d_test=vectorizer.transform(test_iterator)
 
 
 for c in [1]: # here you can test with different c values
-    classifier=LinearSVC(penalty="l1", C=c, dual=False, class_weight="auto") #you can change l1 to l2
+    classifier=LinearSVC(penalty="l2", C=c, dual=False, class_weight="auto") #you can change l1 to l2
     classifier.fit(d,labels_train)
 
     labels_test_pred = classifier.predict(d_test)

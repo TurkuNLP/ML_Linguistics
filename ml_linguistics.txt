@@ -1,8 +1,6 @@
 To log on:
 host name: vm0964.kaj.pouta.csc.fi
 
-usernames: nau1, nau2, nau3, nau4, nau5
-passwords: change.nau1, change.nau2, etc
 
 1. Useful basic commands:
 ls --> list all files in the directory

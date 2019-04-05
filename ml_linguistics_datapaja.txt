@@ -1,0 +1,23 @@
+To log on:
+host name: vm0964.kaj.pouta.csc.fi
+
+
+1. Useful basic commands:
+ls --> list all files in the directory
+nano x.txt --> open t.txt in the nano text editor
+cat x.txt --> print x.txt
+less x.txt --> browse x.txt (return to command line by pressing q)
+python program.py --> run program.py
+cat x.txt | python program.py --> first print x.txt and then feed it as input for program.py
+cd directory --> go the directory
+
+2. Getting the data
+type git clone https://github.com/TurkuNLP/ML_Linguistics.git to the command line
+type ls and enter --> you should see a directory
+type cd ML-Linguistics --> go to the directory
+type ls --> you should see the files
+
+3. Text classification 
+cat 0_ob.txt 1_df.txt 2_sr.txt 3_tb.txt | python svm.py | less --> print the files as input for svm.py, browse the results with less (back to command line with q)
+3. 1. Run the classifier with the two feature sets. How are the results? Which registers are the hardest, which the easiest to detect? Which feature set was the best?
+3. 2. Analyze the key features. Do they make sense? Are there some that  seem less informative? Why?
